@@ -19,6 +19,12 @@ It will also create these resouces using a service principal. The credentials fo
 ```
 terraform init -backend-config="local/backend.tf" 
 
+terraform plan -target azurerm_app_service.website -var-file="local/terraform.tfvars"
+
+terraform apply -target azurerm_app_service.website -var-file="local/terraform.tfvars"
+
+terraform plan -var-file="local/terraform.tfvars"
+
 terraform apply -var-file="local/terraform.tfvars"
 ```
 

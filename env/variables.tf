@@ -12,7 +12,7 @@ variable location {
     default="UK South"
 }
 variable prefix {
-    default="umbtfmf"
+    default="umbtfmf123"
 }
 locals  {
     storage_name="${var.prefix}storage"

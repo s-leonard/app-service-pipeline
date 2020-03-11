@@ -6,10 +6,10 @@ provider "azurerm" {
   client_secret   = var.azure_subscription_client_secret
   tenant_id       = var.azure_tenant_id
 }
-# terraform {
-#  backend "azurerm" {
-#    }
-# }
+terraform {
+  backend "azurerm" {
+   }
+}
 provider "random" {
   version = "~> 2.2"
 }
