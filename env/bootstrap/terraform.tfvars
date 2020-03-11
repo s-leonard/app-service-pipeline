@@ -1,3 +1,3 @@
 app_name="ghl"
-env_name="dev"
+env_name="uat"
 resource_group_location="uksouth"
