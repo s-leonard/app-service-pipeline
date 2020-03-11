@@ -3,5 +3,6 @@ azure_subscription_id="#{azure-subscription-id}#"
 azure_subscription_client_id="#{azure-subscription-client-id}#"
 azure_subscription_client_secret="#{azure-subscription-client-secret}#"
 azure_tenant_id="#{azure-tenant-id}#"
+azure_subscription_sp_object_id="#{azure-subscription-sp-object-id}#"
 
-
+variable "azure_subscription_sp_object_id" {}

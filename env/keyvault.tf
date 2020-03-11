@@ -10,7 +10,12 @@ resource "azurerm_key_vault" "keyvault" {
 
   access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = data.azurerm_client_config.current.service_principal_object_id
+    object_id = var.azure_subscription_sp_object_id
+
+
+
+   tenant_id = data.azurerm_client_config.lab.tenant_id
+    object_id = data.external.lab.result.objectId
 
     key_permissions = [
       "get",

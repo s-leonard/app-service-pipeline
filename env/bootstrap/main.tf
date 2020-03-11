@@ -140,6 +140,12 @@ resource "azurerm_key_vault_secret" "client-secret" {
     key_vault_id = azurerm_key_vault.lab.id
 }
 
+resource "azurerm_key_vault_secret" "sp-object-id" {
+    name = "azure-subscription-sp-object-id"
+    value = azuread_service_principal.lab.object_id
+    key_vault_id = azurerm_key_vault.lab.id
+}
+
 
 
 resource "azurerm_key_vault_secret" "tenant-id" {
