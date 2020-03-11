@@ -1,35 +1,30 @@
-# variables for azurerm and azuread providers
 variable "azure_subscription_id" {}
 variable "azure_subscription_client_id" {}
 variable "azure_subscription_client_secret" {}
 variable "azure_tenant_id" {}
-
-# K8S Variables
 variable resource_group_name {
-    default = "aks"
+    default="umbraco-tf-demo"
 }
-
 variable location {
-    default = "Uk South"
+    default="UK South"
 }
-
-variable "agent_count" {
-    default = 3
+variable prefix {
+    default="umbtfmf"
 }
+locals  {
+    storage_name="${var.prefix}storage"
+    app_plan_name="${var.prefix}-plan"
+    web_site_name="${var.prefix}-site"
+    sql_server_name="${var.prefix}-sql"
+    elastic_pool_name="${var.prefix}-pool"
+    database_name="${var.prefix}-db1"
+    key_vault_name="${var.prefix}kv"
+    cdn_profile_name="${var.prefix}-cdn"
+    cdn_endpoint_name="${var.prefix}-end"
+    app_insights_name="${var.prefix}-insights"
+    sql_connection_string="Data Source=${local.sql_server_name}.database.windows.net;Initial Catalog=${local.database_name};User Id=${var.sql_username};Password=${random_password.sql_password.result};"
 
-variable log_analytics_workspace_name {
-    default = "AksLogAnalyticsWorkspaceName"
 }
-
-# refer https://azure.microsoft.com/global-infrastructure/services/?products=monitor for log analytics available regions
-variable log_analytics_workspace_location {
-    default = "eastus"
+variable sql_username {
+    default="SQLADMIN"
 }
-
-# refer https://azure.microsoft.com/pricing/details/monitor/ for log analytics pricing 
-variable log_analytics_workspace_sku {
-    default = "PerGB2018"
-}
-
-
-

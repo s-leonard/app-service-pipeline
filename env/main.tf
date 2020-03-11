@@ -1,9 +1,10 @@
 provider "azurerm" {
-#  version         = "~>1.5"
-#   subscription_id = var.azure_subscription_id
-#   client_id       = var.azure_subscription_client_id
-#   client_secret   = var.azure_subscription_client_secret
-#   tenant_id       = var.azure_tenant_id
+  version = "~>2.0"
+  features {}
+  subscription_id = var.azure_subscription_id
+  client_id       = var.azure_subscription_client_id
+  client_secret   = var.azure_subscription_client_secret
+  tenant_id       = var.azure_tenant_id
 }
 # terraform {
 #  backend "azurerm" {
