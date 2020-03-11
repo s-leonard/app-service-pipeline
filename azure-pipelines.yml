@@ -1,7 +1,6 @@
 
 variables:
-  websiteManifestName: 'websitemanifest'
-  kubeconfigArtifactName: 'kubeconfig'
+  prefix: 'mfadneskmr'
 
 stages:
 
@@ -10,7 +9,8 @@ stages:
     displayName: Provision Env with Terraform
     variables:
       - group: 'Terraform'
-  
+      
+
     jobs:
     - job: TransformConfiguration
       pool:      
