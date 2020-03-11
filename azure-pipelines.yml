@@ -35,6 +35,11 @@ stages:
         displayName: 'Terraform init'
   
       - script: terraform apply -auto-approve -var-file="terraform.tfvars"
+      - script: |
+          terraform plan -target azurerm_app_service.website -var-file="local/terraform.tfvars"
+          terraform apply -target azurerm_app_service.website -var-file="local/terraform.tfvars"  -auto-approve
+          terraform plan -var-file="local/terraform.tfvars"
+          terraform apply -var-file="local/terraform.tfvars"  -auto-approve
       
         workingDirectory: ./env
         displayName: 'Terraform apply'
